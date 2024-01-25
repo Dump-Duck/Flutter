@@ -68,10 +68,10 @@ class _MyAppState extends State<MyApp> {
               ),
               OutlinedButton(
                 onPressed: () {
-                  _myObject.value = 10;
+                  _myObject.value += 10;
                   setState(() {});
                 }, 
-                  child: const Text('Set value: 10'),
+                  child: const Text('Set value: +10'),
               ),
               OutlinedButton(
                 onPressed: () {

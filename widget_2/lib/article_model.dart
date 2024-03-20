@@ -1,33 +1,56 @@
 class Article {
-  String? title;
-  String? description;
-  String? url;
-  String? urlToImage;
+  final String title;
+  final String urlToImage;
+  final String author;
+  final String content;
+  final String publishedAt;
 
   Article({
-    this.title,
-    this.description,
-    this.url,
-    this.urlToImage,
+    required this.title,
+    required this.urlToImage,
+    required this.author,
+    required this.content,
+    required this.publishedAt,
   });
 
-  // Define a factory method to create Article objects from JSON data
   factory Article.fromJson(Map<String, dynamic> json) {
     return Article(
-      title: json['title'],
-      description: json['description'],
-      url: json['url'],
-      urlToImage: json['urlToImage'],
+      title: json["title"],
+      urlToImage: json["urlToImage"],
+      author: json["author"],
+      content: json["content"],
+      publishedAt: json["publishedAt"],
     );
   }
 
-  // Define a method to convert Article objects to JSON data
   Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['title'] = title;
+    data['urlToImage'] = urlToImage;
+    data['author'] = author;
+    data['content'] = content;
+    data['publishedAt'] = publishedAt;
+    return data;
+  }
+
+  Map<String, dynamic> toMap() {
     return {
-      'title': title,
-      'description': description,
-      'url': url,
-      'urlToImage': urlToImage,
+      'title': this.title,
+      'urlToImage': this.urlToImage,
+      'author': this.author,
+      'content': this.content,
+      'publishedAt': this.publishedAt,
     };
   }
+
+  factory Article.fromMap(Map<String, dynamic> map) {
+    return Article(
+      title: map['title'] as String,
+      urlToImage: map['urlToImage'] as String,
+      author: map['author'] as String,
+      content: map['content'] as String,
+      publishedAt: map['publishedAt'] as String,
+    );
+  }
+//
 }

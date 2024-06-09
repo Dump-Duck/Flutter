@@ -217,7 +217,7 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                 builder: (context) => const SampleItemUpdate(),
               ).then((value) {
                 if (value != null) {
-                  viewModel.addItem(value, context);
+                  viewModel.addItem(value['name'] ?? '', value['description'] ?? '', context);
                 }
               });
             },

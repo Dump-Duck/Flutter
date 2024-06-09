@@ -13,7 +13,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 0, 0, 0),
       appBar: AppBar(
-          leading: const Icon(Icons.arrow_back_outlined,
+          leading: const Icon(Icons.menu,
               color: Color.fromARGB(255, 255, 255, 255)),
           title: const Text('Home'),
           centerTitle: false,
@@ -43,3 +43,4 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
